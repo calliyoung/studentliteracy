@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Student Literacy Standards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#005cb8;
+    --navy:#001b3a;
+    --white:#ffffff;
+    --yellow:#ffd000;
+    --tint:#eef5fc;
+    --line:#cdddef;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--navy);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:500;
+  }
+
+  .mark .dot{
+    width:10px;height:10px;background:var(--yellow);border-radius:2px;
+  }
+
+  .hero{
+    padding:9vw 6vw 6vw;
+    max-width:1080px;
+  }
+  .hero .kicker{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:22px;
+    display:block;
+  }
+  .hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(38px,6.4vw,74px);
+    line-height:1.03;
+    margin:0 0 10px;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .cycle-wrap{
+    position:relative;
+    display:inline-block;
+    color:var(--blue);
+    min-width:1ch;
+  }
+  .hero h1 .cycle-wrap .underline{
+    position:absolute;
+    left:0;right:0;bottom:.06em;
+    height:.12em;
+    background:var(--yellow);
+    z-index:-1;
+  }
+  .hero p.lede{
+    font-size:clamp(16px,1.6vw,19px);
+    line-height:1.6;
+    max-width:620px;
+    color:#294f75;
+    margin:0;
+  }
+
+  .index-section{
+    padding:2vw 6vw 10vw;
+  }
+  .index-section .section-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#5c7fa3;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:4px;
+  }
+
+  .std-row{
+    display:grid;
+    grid-template-columns:70px 1fr auto;
+    align-items:center;
+    gap:28px;
+    padding:34px 18px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    transition:background .18s ease;
+  }
+  .std-row::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:4px;
+    background:transparent;
+    transition:background .18s ease;
+  }
+  .std-row:hover{background:var(--tint);}
+  .std-row:hover::before{background:var(--yellow);}
+
+  .std-code{
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    color:var(--blue);
+    font-weight:500;
+  }
+  .std-main h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,2.6vw,32px);
+    margin:0 0 8px;
+    color:var(--navy);
+  }
+  .std-main h2 span{color:var(--blue);}
+  .std-main p{
+    margin:0;
+    color:#3a5f85;
+    font-size:15px;
+    line-height:1.55;
+    max-width:560px;
+  }
+  .see-more{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:.04em;
+    white-space:nowrap;
+    color:var(--blue);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .18s ease, transform .18s ease;
+  }
+  .std-row:hover .see-more{
+    border-color:var(--blue);
+  }
+
+  @media (max-width:640px){
+    .std-row{grid-template-columns:1fr;gap:10px;padding:26px 4px;}
+    .std-code{order:1;}
+    .std-main{order:2;}
+    .see-more{order:3;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <span class="kicker">Student Literacy Framework</span>
+  <h1>BE <span class="cycle-wrap" id="cycleWord"><span class="underline"></span>safe.</span></h1>
+  <p class="lede">Five habits that guide how students use artificial intelligence.</p>
+</section>
+
+<section class="index-section">
+  <div class="section-label">The standards</div>
+
+  <a class="std-row" href="safe.html">
+    <span class="std-code">01</span>
+    <span class="std-main">
+      <h2>BE <span>Safe</span></h2>
+      <p>Protect yourself and others when working with AI tools.</p>
+    </span>
+    <span class="see-more">See more &rarr;</span>
+  </a>
+
+  <a class="std-row" href="honest.html">
+    <span class="std-code">02</span>
+    <span class="std-main">
+      <h2>BE <span>Honest</span></h2>
+      <p>Claim what's yours. Disclose what isn't.</p>
+    </span>
+    <span class="see-more">See more &rarr;</span>
+  </a>
+
+  <a class="std-row" href="critical.html">
+    <span class="std-code">03</span>
+    <span class="std-main">
+      <h2>BE <span>Critical</span></h2>
+      <p>Stop. Think. Then Decide.</p>
+    </span>
+    <span class="see-more">See more &rarr;</span>
+  </a>
+
+  <a class="std-row" href="resp.html">
+    <span class="std-code">04</span>
+    <span class="std-main">
+      <h2>BE <span>Responsible</span></h2>
+      <p>Use AI in ways that respect people, rules, and the world around you.</p>
+    </span>
+    <span class="see-more">See more &rarr;</span>
+  </a>
+
+  <a class="std-row" href="reflect.html">
+    <span class="std-code">05</span>
+    <span class="std-main">
+      <h2>BE <span>Reflective</span></h2>
+      <p>Notice how AI is shaping the way you think, learn, and grow.</p>
+    </span>
+    <span class="see-more">See more &rarr;</span>
+  </a>
+</section>
+
+<script>
+  var words = ["safe.", "honest.", "critical.", "responsible.", "reflective."];
+  var i = 0;
+  var el = document.getElementById('cycleWord');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    setInterval(function(){
+      i = (i + 1) % words.length;
+      el.style.opacity = 0;
+      setTimeout(function(){
+        el.childNodes[el.childNodes.length-1].textContent = words[i];
+        el.style.opacity = 1;
+      }, 180);
+    }, 2200);
+    el.style.transition = 'opacity .18s ease';
+  }
+</script>
+
+</body>
+</html>
