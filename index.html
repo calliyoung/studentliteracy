@@ -168,7 +168,7 @@
 
 <section class="hero">
   <span class="kicker">Student Literacy Framework</span>
-  <h1>BE <span class="cycle-wrap" id="cycleWord"><span class="underline"></span>safe.</span></h1>
+  <h1>BE <span class="cycle-wrap" id="cycleWord"><span class="underline"></span><span class="word">safe.</span></span></h1>
   <p class="lede">Five habits that guide how students use artificial intelligence.</p>
 </section>
 
@@ -225,18 +225,25 @@
   var words = ["safe.", "honest.", "critical.", "responsible.", "reflective."];
   var i = 0;
   var el = document.getElementById('cycleWord');
+  var wordEl = el.querySelector('.word');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if(!reduce){
-    setInterval(function(){
-      i = (i + 1) % words.length;
-      el.style.opacity = 0;
-      setTimeout(function(){
-        el.childNodes[el.childNodes.length-1].textContent = words[i];
-        el.style.opacity = 1;
-      }, 180);
-    }, 2200);
-    el.style.transition = 'opacity .18s ease';
+    wordEl.style.transition = 'opacity .18s ease';
   }
+
+  setInterval(function(){
+    i = (i + 1) % words.length;
+    if(reduce){
+      wordEl.textContent = words[i];
+    } else {
+      wordEl.style.opacity = 0;
+      setTimeout(function(){
+        wordEl.textContent = words[i];
+        wordEl.style.opacity = 1;
+      }, 180);
+    }
+  }, 2200);
 </script>
 
 </body>
